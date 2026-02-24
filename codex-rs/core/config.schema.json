@@ -367,10 +367,10 @@
             "remote_models": {
               "type": "boolean"
             },
-            "request_rule": {
+            "request_permission": {
               "type": "boolean"
             },
-            "request_permission": {
+            "request_rule": {
               "type": "boolean"
             },
             "responses_websockets": {
@@ -1648,10 +1648,10 @@
         "remote_models": {
           "type": "boolean"
         },
-        "request_rule": {
+        "request_permission": {
           "type": "boolean"
         },
-        "request_permission": {
+        "request_rule": {
           "type": "boolean"
         },
         "responses_websockets": {

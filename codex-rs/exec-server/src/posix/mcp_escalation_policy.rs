@@ -112,7 +112,7 @@ impl EscalationPolicy for McpEscalationPolicy {
             ExecPolicyOutcome::Allow {
                 sandbox_permissions,
             } => {
-                if sandbox_permissions.requires_escalated_permissions() {
+                if sandbox_permissions.needs_elevated_permissions() {
                     EscalateAction::Escalate
                 } else {
                     EscalateAction::Run
@@ -127,7 +127,9 @@ impl EscalationPolicy for McpEscalationPolicy {
                 // TODO: Extract reason from `result.content`.
                 match result.action {
                     ElicitationAction::Accept => {
-                        if sandbox_permissions.requires_escalated_permissions() {
+                        if sandbox_permissions.needs_elevated_permissions()
+                            | sandbox_permissions.needs_elevated_permissions()
+                        {
                             EscalateAction::Escalate
                         } else {
                             EscalateAction::Run
